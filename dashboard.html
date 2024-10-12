@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="background">
+    <div class="preloader">
+        <i class="fa-solid fa-spin fa-arrows-rotate"></i>
+    </div>
+    <header class="header">
+        <nav>
+            <div class="menu">
+                <div class="name">
+                    <p class="small">هـ</p>
+                    <h1 class="large">هشام</h1>
+                </div>
+                <div class="menu-shape">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="user">
+                <img src="./assets/images/test.jpg" alt="test img">
+                <div class="user-name">هشام</div>
+                <a href="index.html" class="logout">log out</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="side-menu open">
+        <div class="user-status">
+            <img class="opened" src="./assets/images/test.jpg" alt="user photo">
+            <div class="user-info visible">
+                <div class="name">هشام</div>
+                <div class="status">متصل</div>
+            </div>
+        </div>
+        <div class="links">
+            <div class="link dashboard">
+                <a class="container-link" href="dashboard.html">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-dashboard"></i>
+                            <p class="menu-item visible">لوحة التحكم</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow arrow-one visible"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-users"></i>
+                            <p class="menu-item visible">العملاء</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-customer.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text add-customer">إضافة عميل</div>
+                        </a>
+                        <a href="load-entry.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة العملاء</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa-solid menu-icon fa-city"></i>
+                            <p class="menu-item visible">المدن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-city.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة مدينة</div>
+                        </a>
+                        <a href="city.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة المدن</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-box-open"></i>
+                            <p class="menu-item visible">الشحن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-shipping.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة شحن</div>
+                        </a>
+                        <a href="shipping-reports.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة الشحنات</div>
+                        </a>
+                        <a href="returns.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">المرتجعات</div>
+                        </a>
+                        <a href="paid.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">العمليات المدفوعة </div>
+                        </a>
+                        <a href="cancelled.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">العمليات الملغاة </div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-truck"></i>
+                            <p class="menu-item visible">شركات الشحن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-company.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة شركة</div>
+                        </a>
+                        <a href="shipping-company.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة الشركات</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-car"></i>
+                            <p class="menu-item visible">المستخدمون</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-user.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة مستخدم</div>
+                        </a>
+                        <a href="users.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة المستخدمين</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+
+        <div class="main-text remove-margin-text open-box">
+            <h3>لوحة التحكم <span>الرئيسية</span></h3>
+        </div>
+
+        <div class="container">
+
+            <div class="boxes responsive-container open-box">
+                <div class="box box-1">
+                    <div class="text-container">
+                        <div class="text">
+                            <div class="digit">87</div>
+                            <p>العملاء</p>
+                        </div>
+                        <i class="fa-solid fa-users box-icon"></i>
+                    </div>
+                    <div class="more">
+                        <a href="load-entry.html">
+                            <p>التفاصيل <i class="fa-solid fa-circle-arrow-left"></i></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="box box-2">
+                    <div class="text-container">
+                        <div class="text">
+                            <div class="digit">87</div>
+                            <p>المدن</p>
+                        </div>
+                        <i class="fa-solid fa-city box-icon"></i>
+                    </div>
+                    <div class="more">
+                        <a href="city.html">
+                            <p>التفاصيل <i class="fa-solid fa-circle-arrow-left"></i></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="box box-3">
+                    <div class="text-container">
+                        <div class="text">
+                            <div class="digit">87</div>
+                            <p>الشحن</p>
+                        </div>
+                        <i class="fa-solid fa-box-open box-icon"></i>
+                    </div>
+                    <div class="more">
+                        <a href="shipping-reports.html">
+                            <p>التفاصيل <i class="fa-solid fa-circle-arrow-left"></i></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="box box-4">
+                    <div class="text-container">
+                        <div class="text">
+                            <div class="digit">87</div>
+                            <p>شركات الشحن</p>
+                        </div>
+                        <i class="fa-solid fa-truck box-icon"></i>
+                    </div>
+                    <div class="more">
+                        <a href="shipping-company.html">
+                            <p>التفاصيل <i class="fa-solid fa-circle-arrow-left"></i></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="box box-5">
+                    <div class="text-container">
+                        <div class="text">
+                            <div class="digit">87</div>
+                            <p>المرتجعات</p>
+                        </div>
+                        <i class="fa-solid fa-car box-icon"></i>
+                    </div>
+                    <div class="more">
+                        <a href="returns.html">
+                            <p>التفاصيل <i class="fa-solid fa-circle-arrow-left"></i></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="box box-6">
+                    <div class="text-container">
+                        <div class="text">
+                            <div class="digit">87</div>
+                            <p>العمليات المدفوعة</p>
+                        </div>
+                        <i class="fa-solid fa-box-open box-icon"></i>
+                    </div>
+                    <div class="more">
+                        <a href="paid.html">
+                            <p>التفاصيل <i class="fa-solid fa-circle-arrow-left"></i></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="box box-7">
+                    <div class="text-container">
+                        <div class="text">
+                            <div class="digit">87</div>
+                            <p>العمليات الملغاة</p>
+                        </div>
+                        <i class="fa-solid fa-sticky-note box-icon"></i>
+                    </div>
+                    <div class="more">
+                        <a href="cancelled.html">
+                            <p>التفاصيل <i class="fa-solid fa-circle-arrow-left"></i></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="box box-8">
+                    <div class="text-container">
+                        <div class="text">
+                            <div class="digit">87</div>
+                            <p>المستخدمون</p>
+                        </div>
+                        <i class="fa-solid fa-sticky-note box-icon"></i>
+                    </div>
+                    <div class="more">
+                        <a href="users.html">
+                            <p>التفاصيل <i class="fa-solid fa-circle-arrow-left"></i></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

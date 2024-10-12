@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <script src="./assets/js/custom.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <title>الشحن</title>
+    <style>
+    </style>
+</head>
+
+<body class="popup-allow">
+    <div class="preloader">
+        <i class="fa-solid fa-spin fa-arrows-rotate"></i>
+    </div>
+    <header class="header">
+        <nav>
+            <div class="menu">
+                <div class="name">
+                    <p class="small">هـ</p>
+                    <h1 class="large">هشام</h1>
+                </div>
+                <div class="menu-shape">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="user">
+                <img src="./assets/images/test.jpg" alt="test img">
+                <div class="user-name">هشام</div>
+                <a href="index.html" class="logout">log out</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="side-menu open">
+        <div class="user-status">
+            <img class="opened" src="./assets/images/test.jpg" alt="user photo">
+            <div class="user-info visible">
+                <div class="name">هشام</div>
+                <div class="status">متصل</div>
+            </div>
+        </div>
+        <div class="links">
+            <div class="link dashboard">
+                <a class="container-link" href="dashboard.html">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-dashboard"></i>
+                            <p class="menu-item visible">لوحة التحكم</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow arrow-one visible"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-users"></i>
+                            <p class="menu-item visible">العملاء</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-customer.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text add-customer">إضافة عميل</div>
+                        </a>
+                        <a href="load-entry.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة العملاء</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa-solid menu-icon fa-city"></i>
+                            <p class="menu-item visible">المدن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-city.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة مدينة</div>
+                        </a>
+                        <a href="city.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة المدن</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-box-open"></i>
+                            <p class="menu-item visible">الشحن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-shipping.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة شحن</div>
+                        </a>
+                        <a href="shipping-reports.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة الشحنات</div>
+                        </a>
+                        <a href="returns.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">المرتجعات</div>
+                        </a>
+                        <a href="paid.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">العمليات المدفوعة </div>
+                        </a>
+                        <a href="cancelled.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">العمليات الملغاة </div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-truck"></i>
+                            <p class="menu-item visible">شركات الشحن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-company.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة شركة</div>
+                        </a>
+                        <a href="shipping-company.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة الشركات</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-car"></i>
+                            <p class="menu-item visible">المستخدمون</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-user.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة مستخدم</div>
+                        </a>
+                        <a href="users.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة المستخدمين</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-text remove-margin-text open-box">
+        <h3>لوحة التحكم <span>الشحن</span></h3>
+    </div>
+    <div class="table-container">
+        <table id="example" class="responsive-container display cell-border responsive" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>تاريخ الشحن</th>
+                    <th>إسم العميل</th>
+                    <th>هاتف 1</th>
+                    <th>هاتف 2</th>
+                    <th>هاتف 3</th>
+                    <th>الشركة</th>
+                    <th>المدينة</th>
+                    <th>الوزن</th>
+                    <th>البوليصة</th>
+                    <th>القيمة</th>
+                    <th>الإجمالي</th>
+                    <th>الحالة</th>
+                    <th>الدفع</th>
+                    <th>تعديل</th>
+                    <th>الدفع</th>
+                    <th>طباعة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">COD</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+                <tr>
+                    <td>22-12-2023</td>
+                    <td>محمد جمال الدين</td>
+                    <td>01000000000</td>
+                    <td>01100000000</td>
+                    <td>01100000000</td>
+                    <td>Face2Face</td>
+                    <td>الإسكندرية</td>
+                    <td>0</td>
+                    <td><input type="text" value="10161551" class="allow-edit"></td>
+                    <td>16500</td>
+                    <td>16500</td>
+                    <td><input type="text" value="تم" class="allow-edit"></td>
+                    <td>
+                        <div class="first-button">VISA</div>
+                    </td>
+                    <td><a href="#" class="edit-allowed second-button">تعديل</a></td>
+                    <td><a href="#" class="second-button">دفع</a></td>
+                    <td><a href="#" class="second-button">طباعة</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المدن</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <script src="./assets/js/custom.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+
+<body class="no-buttons popup-allow search-paging">
+    <div class="preloader">
+        <i class="fa-solid fa-spin fa-arrows-rotate"></i>
+    </div>
+    <header class="header">
+        <nav>
+            <div class="menu">
+                <div class="name">
+                    <p class="small">هـ</p>
+                    <h1 class="large">هشام</h1>
+                </div>
+                <div class="menu-shape">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="user">
+                <img src="./assets/images/test.jpg" alt="test img">
+                <div class="user-name">هشام</div>
+                <a href="index.html" class="logout">log out</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="side-menu open">
+        <div class="user-status">
+            <img class="opened" src="./assets/images/test.jpg" alt="user photo">
+            <div class="user-info visible">
+                <div class="name">هشام</div>
+                <div class="status">متصل</div>
+            </div>
+        </div>
+        <div class="links">
+            <div class="link dashboard">
+                <a class="container-link" href="dashboard.html">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-dashboard"></i>
+                            <p class="menu-item visible">لوحة التحكم</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow arrow-one visible"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-users"></i>
+                            <p class="menu-item visible">العملاء</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-customer.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text add-customer">إضافة عميل</div>
+                        </a>
+                        <a href="load-entry.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة العملاء</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa-solid menu-icon fa-city"></i>
+                            <p class="menu-item visible">المدن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-city.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة مدينة</div>
+                        </a>
+                        <a href="city.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة المدن</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-box-open"></i>
+                            <p class="menu-item visible">الشحن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-shipping.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة شحن</div>
+                        </a>
+                        <a href="shipping-reports.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة الشحنات</div>
+                        </a>
+                        <a href="returns.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">المرتجعات</div>
+                        </a>
+                        <a href="paid.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">العمليات المدفوعة </div>
+                        </a>
+                        <a href="cancelled.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">العمليات الملغاة </div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-truck"></i>
+                            <p class="menu-item visible">شركات الشحن</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-company.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة شركة</div>
+                        </a>
+                        <a href="shipping-company.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة الشركات</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="link dashboard">
+                <div class="container-link" href="#">
+                    <div class="all-content">
+                        <div class="content remove-justify">
+                            <i class="fa menu-icon fa-car"></i>
+                            <p class="menu-item visible">المستخدمون</p>
+                        </div>
+                        <i class="fa fa-chevron-right arrow visible"></i>
+                    </div>
+                    <ul>
+                        <a href="add-user.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">إضافة مستخدم</div>
+                        </a>
+                        <a href="users.html" class="drop-down-li">
+                            <div class="circle"></div>
+                            <div class="text">مشاهدة المستخدمين</div>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-text remove-margin-text open-box shipping-heading">
+        <h3>لوحة التحكم <span>المدن</span></h3>
+    </div>
+    <section class="responsive-container open-box">
+        <div class="main-text">
+            <div class="text">إضافة مدينة</div>
+            <a href="add-city.html" class="add-shipper"><i class="fa-solid fa-sma fa-plus"></i>إضافة مدينة</a>
+        </div>
+        <div class="table-container closed city">
+            <table id="example" class="responsive-container display cell-border responsive" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>المدينة</th>
+                        <th>تكلفة الشحن</th>
+                        <th>تعديل</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>الإسكندرية</td>
+                        <td><input class="allow-edit" type="number" value="15"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>القاهرة</td>
+                        <td><input class="allow-edit" type="number" value="25"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>مطروح</td>
+                        <td><input class="allow-edit" type="number" value="20"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>راس غارب</td>
+                        <td><input class="allow-edit" type="number" value="43"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>كفر الشيخ</td>
+                        <td><input class="allow-edit" type="number" value="55"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>المنيا</td>
+                        <td><input class="allow-edit" type="number" value="100"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>السويس</td>
+                        <td><input class="allow-edit" type="number" value="80"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>الوادي الجديد</td>
+                        <td><input class="allow-edit" type="number" value="110"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>رشيد</td>
+                        <td><input class="allow-edit" type="number" value="30"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>اسوان</td>
+                        <td><input class="allow-edit" type="number" value="220"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                    <tr>
+                        <td>الجيزة</td>
+                        <td><input class="allow-edit" type="number" value="25"></td>
+                        <td><a href="#" class="first-button edit-allowed">تعديل</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <div class="pop-up">
+        <div class="box">
+            <div class="heading">
+                <h3>إضافة مدينة</h3>
+                <i class="fa fa-times"></i>
+            </div>
+            <label>
+                <div class="container">
+                    <p>المدينة :</p>
+                    <div class="inputs">
+                        <div class="input input-special">
+                            <input class="text-input" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="container returns">
+                    <p>تكلفة الشحن :</p>
+                    <div class="inputs">
+                        <div class="input input-special">
+                            <input class="text-input" type="number">
+                        </div>
+                    </div>
+                </div>
+            </label>
+            <div class="buttons">
+                <button>أضافة</button>
+                <button class="close-popup">إلغاء</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
